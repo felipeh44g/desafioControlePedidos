@@ -1,5 +1,6 @@
 package com.desafio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ public class OrdemPedido {
     private Long id;
 
     @OneToMany(mappedBy = "ordemPedido")
+    @JsonIgnore
     private List<Pedido> pedidos;
 
 }
