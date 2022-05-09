@@ -17,9 +17,6 @@ public class PedidoConsumer {
 
     @RabbitListener(queues = PedidoSender.QUEUE)
     public void recebePedidoQueue(Pedido pedido) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Vai criar planilha do ").append(pedido.getId());
-        System.out.println(sb.toString());
         relatorioService.adicionaPedidoRelatorio(pedido);
     }
 

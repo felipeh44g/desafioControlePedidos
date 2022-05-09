@@ -39,8 +39,6 @@ public class RelatorioService {
         workbook.write(outputStream);
         workbook.close();
         outputStream.close();
-
-
     }
     private void criarPedidoRelatorio(Pedido pedido) throws IOException {
         Workbook wb = new HSSFWorkbook();
