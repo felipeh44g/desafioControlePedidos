@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  postgresDesafio:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=desafio
+    ports:
+      - 5432:5432
+  rabbitmqDesafio:
+    image: 'rabbitmq:3-management'
+    environment:
+      - RABBITMQ_USER=guest
+      - RABBITMQ_PASSWORD=guest
+    ports:
+      - 15672:15672
+      - 5672:5672
